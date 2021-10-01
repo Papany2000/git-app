@@ -1,0 +1,12 @@
+.container{
+    grid-area: container;
+    background: green;
+  }
+  .img{
+    width: 1000px;
+    height: 400px;
+  }
+  .foto{
+    width: 200px;
+    height: 200px;
+  }
