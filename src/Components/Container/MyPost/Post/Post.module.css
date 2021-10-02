@@ -1,0 +1,13 @@
+
+  .user{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+.text{
+    padding: 100px 50px 0px;
+}
+.post{
+  margin-left: 20px;  
+}
