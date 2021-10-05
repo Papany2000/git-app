@@ -8,6 +8,10 @@
   grid-template-columns: 300px 1fr;
   grid-gap: 10px;
 }
+.app-wrapper-container{
+  grid-area: container;
+  background: green;
+};
 
 
 
