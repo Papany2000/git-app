@@ -8,7 +8,7 @@ return <sidebar className = {style.sidebar}>
    <a href = '/Dialogs'><li>Сообщения</li></a>
    <a href = '/News'><li>Новости</li></a>
    <a href = '/Music'><li>Музыка</li></a>
-   <a href = '/Setting'><li>Настройка</li></a>
+   <a href = '/Settings'><li>Настройка</li></a>
   </ul>
 </nav>
 </sidebar>

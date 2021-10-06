@@ -20,8 +20,8 @@ const App = (props) => {
        <Route path = '/Dialogs' component = {Dialogs} />
        <Route path = '/Container' component = {Container} />
        <Route path = '/News' component = {News}/>
-       <Route path = '/Music' component = {Music}/>
        <Route path = '/Settings' component = {Settings}/>
+       <Route path = '/Music' component = {Music}/>
      </div>
      <Footer />
     </div>
