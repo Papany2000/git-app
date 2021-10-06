@@ -1,13 +1,14 @@
 import React from 'react';
 import style from './Sidebar.module.css'
-const Sidebar = () =>{
+const Sidebar = (props) =>{
 return <sidebar className = {style.sidebar}>
 <nav>
   <ul>
-    <li>Профиль</li>
-    <li>Сообщения</li>
-    <li>Новости</li>
-    <li>Музыка</li>
+   <a href = '/Container'><li>Профиль</li></a> 
+   <a href = '/Dialogs'><li>Сообщения</li></a>
+   <a href = '/News'><li>Новости</li></a>
+   <a href = '/Music'><li>Музыка</li></a>
+   <a href = '/Setting'><li>Настройка</li></a>
   </ul>
 </nav>
 </sidebar>
