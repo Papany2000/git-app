@@ -2,4 +2,16 @@
 .sidebar{
     grid-area: sidebar;
     background: red;
+    padding:  20px;
+  }
+  .item a {
+    text-decoration: none;
+    color:white
+    
+  }
+  .item a:hover{
+    color:green;
+  }
+  .item a.activeLink{
+    color: gold;
   }

@@ -1,16 +1,25 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import style from './Sidebar.module.css'
 const Sidebar = (props) =>{
 return <sidebar className = {style.sidebar}>
-<nav>
-  <ul>
-   <a href = '/Container'><li>Профиль</li></a> 
-   <a href = '/Dialogs'><li>Сообщения</li></a>
-   <a href = '/News'><li>Новости</li></a>
-   <a href = '/Music'><li>Музыка</li></a>
-   <a href = '/Settings'><li>Настройка</li></a>
-  </ul>
-</nav>
+    
+   <div className = {style.item}>
+   <NavLink to = '/Container' activeClassName = {style.activeLink}>Профиль</NavLink> 
+   </div>
+   <div className = {style.item}>
+   <NavLink to = '/Dialogs' activeClassName = {style.activeLink}>Сообщения</NavLink>
+   </div>
+   <div className = {style.item}>
+   <NavLink to = '/News' activeClassName = {style.activeLink}>Новости</NavLink>
+   </div>
+   <div className = {style.item}>
+   <NavLink to = '/Music' activeClassName = {style.activeLink}>Музыка</NavLink>
+   </div>
+   <div className = {style.item}>
+   <NavLink to = '/Settings' activeClassName = {style.activeLink}>Настройка</NavLink>
+   </div>
+
 </sidebar>
 }
 export default Sidebar
