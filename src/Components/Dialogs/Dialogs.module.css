@@ -1,5 +1,37 @@
 .dialogs{
-    font-size: 18px;
-    color: #fff;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
 }
+.dialogsItems{
+    padding: 20px;
+}
+.dialogsItems .active{
+    color:gold;
+} 
+
+.messages{
+   
+    padding: 10px;
+}
+.messag{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 20px;
+    
+}
+.messagImage{
+    width: 100px;
+    height: 100px;
+}
+.messagText{
+    width: 500px;
+    height: 100px;
+    padding-left: 10px;
+    border-radius: 20px;
+    background: greenyellow;
+}
+    
+
  
