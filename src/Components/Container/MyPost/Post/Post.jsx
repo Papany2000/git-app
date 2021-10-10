@@ -4,7 +4,7 @@ const Post = (props) => {
     return <div>
             <div class = {style.post}>
             <p className = 'person'>
-                <img className = {style.person} src = {props.src} alt = 'Фото'/>
+                <img className = {style.person} src = {props.src} alt = {props.alt}/>
             </p>
             <p>{props.name}</p>
             <textarea>
