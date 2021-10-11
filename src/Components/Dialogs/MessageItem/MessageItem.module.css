@@ -1,0 +1,19 @@
+.messages{
+
+    padding: 10px;
+}
+.messag{
+    
+  
+    margin-left: 20px;
+    
+}
+
+.messagText{
+    width: 500px;
+    height: 100px;
+    padding-left: 10px;
+    border-radius: 20px;
+    background: greenyellow;
+    color:  black;
+}

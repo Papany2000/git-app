@@ -11,17 +11,18 @@ import News from './Components/News/News';
 import Settings from './Components/Settings/Settings';
 
 const App = (props) => {
+
   return (
     <BrowserRouter>
     <div className ='app-wrapper'>
      <Heder />
      <Sidebar />
      <div class = "app-wrapper-container">
-       <Route path = '/Dialogs' component = {Dialogs} />
-       <Route path = '/Container' component = {Container} />
-       <Route path = '/News' component = {News}/>
-       <Route path = '/Settings' component = {Settings}/>
-       <Route path = '/Music' component = {Music}/>
+       <Route path = '/Dialogs' render = {() => <Dialogs /> } />
+       <Route path = '/Container' render = { () => <Container postData = {props.postData}/>} />
+       <Route path = '/News' render = { () => <News />}/>
+       <Route path = '/Settings' render = { () => <Settings />}/>
+       <Route path = '/Music' render = { () => <Music />}/>
      </div>
      <Footer />
     </div>

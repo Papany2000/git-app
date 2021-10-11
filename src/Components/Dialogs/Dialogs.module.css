@@ -2,41 +2,7 @@
     display: grid;
     grid-template-columns: 4fr 10fr;
 }
-.dialogsItems{
-    padding: 20px;
-    
-}
-.dialogsItems .active{
-    color:gold;
-} 
 
-.messages{
-
-    padding: 10px;
-}
-.messag{
-    
-  
-    margin-left: 20px;
-    
-}
-.dialog .active{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-.dialogsImage{
-    width: 100px;
-    height: 100px;
-}
-.messagText{
-    width: 500px;
-    height: 100px;
-    padding-left: 10px;
-    border-radius: 20px;
-    background: greenyellow;
-    color:  black;
-}
     
 
  

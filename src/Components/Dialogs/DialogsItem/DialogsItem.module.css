@@ -1,0 +1,17 @@
+
+.dialogsItems{
+    padding: 20px;
+    
+}
+.dialogsItems a.active{
+    color:gold;
+} .dialog .active{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.dialogsImage{
+    width: 100px;
+    height: 100px;
+}
+
