@@ -5,7 +5,7 @@ import Footer from './Components/Footer/Footer';
 import Heder from './Components/Heder/Heder'
 import Sidebar from './Components/Sidebar/Sidebar';
 import Container from './Components/Container/Container';
-import {BrowserRouter, Route}  from 'react-router-dom'
+import {Route}  from 'react-router-dom'
 import Music from './Components/Music/Music';
 import News from './Components/News/News';
 import Settings from './Components/Settings/Settings';
@@ -13,7 +13,6 @@ import Settings from './Components/Settings/Settings';
 const App = (props) => {
 
   return (
-    <BrowserRouter>
     <div className ='app-wrapper'>
      <Heder />
      <Sidebar />
@@ -26,7 +25,6 @@ const App = (props) => {
      </div>
      <Footer />
     </div>
-    </BrowserRouter>
   )
 }
 
