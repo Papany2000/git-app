@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals'
-import state from './Components/reduc/state';
-import {BrowserRouter} from 'react-router-dom'
+import state, { addPost } from './Components/reduc/state';
+import {BrowserRouter} from 'react-router-dom';
+
+//addPost('ghjhgjhgh')
 ReactDOM.render(
   <BrowserRouter>
-    <App state = {state}/>
+    <App state = {state} addPost = {addPost}/>
     </BrowserRouter>,
   document.getElementById('root')
 );

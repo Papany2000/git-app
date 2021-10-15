@@ -23,4 +23,15 @@ let state = {
     }
 
 }
+export let addPost = (postData) => {
+    let newPost = {
+        id: 4,
+        messeg: postData,
+        name: 'Рома',
+        src: "https://cdn.pixabay.com/photo/2015/06/23/09/13/music-818459__340.jpg",
+        alt: 'foto'
+    };
+    state.container.postData.push(newPost)
+
+}
 export default state;

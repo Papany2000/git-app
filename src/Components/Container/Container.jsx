@@ -7,7 +7,7 @@ const Container = (props) =>{
    return (
    <div className = {style.container}>
      <ProfileInfo />
-      <MyPost postData = {props.postData}/>
+      <MyPost postData = {props.postData} addPost = {props.addPost}/>
    </div>
    )
 }

@@ -2,10 +2,13 @@ import React from 'react';
 import style from './MyPost.module.css'
 import Post from './Post/Post';
 const MyPost = (props) =>{
-    let addPost = () => {let text = newPostElement.current.value;
-    alert(text)}
-    let postElements = props.postData.map(post => <Post messeg = {post.messeg}  name ={post.name} src = {post.src}  alt = {post.alt}/>)
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+    props.addPost(text)}
     let newPostElement = React.createRef()
+
+    let postElements = props.postData.map(post => <Post messeg = {post.messeg}  name ={post.name} src = {post.src}  alt = {post.alt}/>)
     return <div>
     <div>
         <div class = {style.post}>

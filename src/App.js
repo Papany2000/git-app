@@ -18,7 +18,7 @@ const App = (props) => {
      <Sidebar />
      <div class = "app-wrapper-container">
        <Route path = '/Dialogs' render = {() => <Dialogs state =  {props.state.dialogs} messagesData = {props.state.dialogs.messagesData}/> } />
-       <Route path = '/Container' render = { () => <Container postData = {props.state.container.postData}/>} />
+       <Route path = '/Container' render = { () => <Container postData = {props.state.container.postData} addPost = {props.addPost}/>} />
        <Route path = '/News' render = { () => <News />}/>
        <Route path = '/Settings' render = { () => <Settings />}/>
        <Route path = '/Music' render = { () => <Music />}/>
