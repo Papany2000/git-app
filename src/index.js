@@ -3,16 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals'
-import state, { addPost } from './Components/reduc/state';
+import state, { addPost, updateNewPostText} from './Components/reduc/state';
 import {BrowserRouter} from 'react-router-dom';
 
-//addPost('ghjhgjhgh')
-ReactDOM.render(
-  <BrowserRouter>
-    <App state = {state} addPost = {addPost}/>
-    </BrowserRouter>,
-  document.getElementById('root')
-);
+
+let rerenderEntireTree = () =>{
+  ReactDOM.render(
+    <BrowserRouter>
+      <App state = {state} addPost = {addPost} updateNewPostText = {updateNewPostText} />
+      </BrowserRouter>,
+    document.getElementById('root')
+  );
+}
+rerenderEntireTree()
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

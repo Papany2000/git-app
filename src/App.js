@@ -16,9 +16,9 @@ const App = (props) => {
     <div className ='app-wrapper'>
      <Heder />
      <Sidebar />
-     <div class = "app-wrapper-container">
+     <div className = "app-wrapper-container">
        <Route path = '/Dialogs' render = {() => <Dialogs state =  {props.state.dialogs} messagesData = {props.state.dialogs.messagesData}/> } />
-       <Route path = '/Container' render = { () => <Container postData = {props.state.container.postData} addPost = {props.addPost}/>} />
+       <Route path = '/Container' render = { () => <Container container = {props.state.container} addPost = {props.addPost}  updateNewPostText = {props.updateNewPostText}/>} />
        <Route path = '/News' render = { () => <News />}/>
        <Route path = '/Settings' render = { () => <Settings />}/>
        <Route path = '/Music' render = { () => <Music />}/>

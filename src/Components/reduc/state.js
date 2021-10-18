@@ -1,4 +1,6 @@
-
+let rerenderEntireTree = () =>{
+    console.log('State changed')
+}
 let state = {
     container: {
         postData:
@@ -6,7 +8,9 @@ let state = {
                 { id: 1, messeg: 'Мне нравится ваш пост', name: 'Pete Y.', src: 'https://cdn.pixabay.com/photo/2016/05/17/22/16/baby-1399332_960_720.jpg', alt: 'foto' },
                 { id: 2, messeg: 'Мне нравится ваш пост', name: 'Djon T.', src: 'https://cdn.pixabay.com/photo/2015/06/23/09/13/music-818459__340.jpg', alt: 'foto' },
             ],
+            newPostText: 'it-kamasutra.com',
     },
+        
     dialogs: {
         dialogsData:
             [
@@ -26,12 +30,16 @@ let state = {
 export let addPost = (postData) => {
     let newPost = {
         id: 4,
-        messeg: postData,
+        messeg: state.container.newPostText,
         name: 'Рома',
         src: "https://cdn.pixabay.com/photo/2015/06/23/09/13/music-818459__340.jpg",
         alt: 'foto'
     };
     state.container.postData.push(newPost)
-
+    rerenderEntireTree(state)
+}
+export let updateNewPostText = (newText) =>{
+    state.container.newPostText = newText;
+    rerenderEntireTree(state)
 }
 export default state;
