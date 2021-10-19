@@ -5,10 +5,10 @@ let state = {
     container: {
         postData:
             [
-                { id: 1, messeg: 'Мне нравится ваш пост', name: 'Pete Y.', src: 'https://cdn.pixabay.com/photo/2016/05/17/22/16/baby-1399332_960_720.jpg', alt: 'foto' },
-                { id: 2, messeg: 'Мне нравится ваш пост', name: 'Djon T.', src: 'https://cdn.pixabay.com/photo/2015/06/23/09/13/music-818459__340.jpg', alt: 'foto' },
+                { id: 1, messeg: 'Мне нравится ваш пост', name: 'Sergey Y.', src: 'https://images.pexels.com/photos/7155295/pexels-photo-7155295.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', alt: 'foto' },
+                { id: 2, messeg: 'Мне нравится ваш пост', name: 'Sergey Y.', src: 'https://images.pexels.com/photos/7155295/pexels-photo-7155295.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', alt: 'foto' },
             ],
-            newPostText: 'it-kamasutra.com',
+            newPostText: '',
     },
         
     dialogs: {
@@ -27,19 +27,22 @@ let state = {
     }
 
 }
-export let addPost = (postData) => {
+export const addPost = (postData) => {
     let newPost = {
         id: 4,
         messeg: state.container.newPostText,
-        name: 'Рома',
-        src: "https://cdn.pixabay.com/photo/2015/06/23/09/13/music-818459__340.jpg",
+        name: 'Sergey Y.',
+        src: "https://images.pexels.com/photos/7155295/pexels-photo-7155295.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         alt: 'foto'
     };
     state.container.postData.push(newPost)
     rerenderEntireTree(state)
 }
-export let updateNewPostText = (newText) =>{
+export const updateNewPostText = (newText) =>{
     state.container.newPostText = newText;
     rerenderEntireTree(state)
+}
+export const subscribe  = (obserwer) =>{
+    rerenderEntireTree = obserwer;//obserwer callbak function наблюдатель что то как  addEventListener
 }
 export default state;

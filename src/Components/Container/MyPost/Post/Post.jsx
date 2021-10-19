@@ -4,7 +4,7 @@ const Post = (props) => {
     let addPost = () => {alert('Привет')}
     return <div>
             <div class = {style.post}>
-            <p className = 'person'>
+            <p className = "person">
                 <img className = {style.person} src = {props.src} alt = {props.alt}/>
             </p>
             <p>{props.name}</p>
