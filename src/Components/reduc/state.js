@@ -1,7 +1,5 @@
-let rerenderEntireTree = () =>{
-    console.log('State changed')
-}
-let state = {
+let store = {
+    _state: {
     container: {
         postData:
             [
@@ -26,23 +24,32 @@ let state = {
         ]
     }
 
-}
-export const addPost = (postData) => {
+},
+getState() {
+    return this._state;
+},
+ _callSubscriber() {
+    console.log('State changed');
+},
+addPost () {
+    
     let newPost = {
         id: 4,
-        messeg: state.container.newPostText,
+        messeg: this._state.container.newPostText,
         name: 'Sergey Y.',
         src: "https://images.pexels.com/photos/7155295/pexels-photo-7155295.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         alt: 'foto'
-    };
-    state.container.postData.push(newPost)
-    rerenderEntireTree(state)
+    }
+    this._state.container.postData.push(newPost);
+     this._callSubscriber(this._state);
+},
+updateNewPostText(newText) {;
+    this._state.container.newPostText = newText;
+    this._callSubscriber(this._state);
+},
+ subscribe (obserwer) {
+    this._callSubscriber = obserwer;//obserwer callbak function наблюдатель что то как  addEventListener
+},
 }
-export const updateNewPostText = (newText) =>{
-    state.container.newPostText = newText;
-    rerenderEntireTree(state)
-}
-export const subscribe  = (obserwer) =>{
-    rerenderEntireTree = obserwer;//obserwer callbak function наблюдатель что то как  addEventListener
-}
-export default state;
+
+export default store;
