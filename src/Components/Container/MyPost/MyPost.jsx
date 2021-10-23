@@ -1,20 +1,24 @@
 import React from 'react';
 import style from './MyPost.module.css'
 import Post from './Post/Post';
+import {addPostActionCreator, updateNewPostActionCreator} from '../../reduc/state';
+
 const MyPost = (props) =>{
 
+    let postElements = props.postData.map(post => <Post messeg = {post.messeg}  name ={post.name} src = {post.src}  alt = {post.alt}/>)
+    let newPostElement = React.createRef()
+   
     let addPost = () => {   
-    props.addPost()
-    props.updateNewPostText('')
+    props.dispatch(addPostActionCreator())
+    
 };
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text)
+        let action = updateNewPostActionCreator(text);
+        props.dispatch(action);
     }
 
-    let newPostElement = React.createRef()
-
-    let postElements = props.postData.map(post => <Post messeg = {post.messeg}  name ={post.name} src = {post.src}  alt = {post.alt}/>)
+   
     return <div>
     <div>
         <div className = {style.post}>
