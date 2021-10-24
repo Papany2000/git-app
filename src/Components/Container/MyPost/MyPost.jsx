@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './MyPost.module.css'
 import Post from './Post/Post';
-import {addPostActionCreator, updateNewPostActionCreator} from '../../reduc/state';
+import {addPostActionCreator, updateNewPostActionCreator} from '../../reduc/container-reducer';
 
 const MyPost = (props) =>{
 
