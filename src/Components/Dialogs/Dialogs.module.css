@@ -2,7 +2,25 @@
     display: grid;
     grid-template-columns: 4fr 10fr;
 }
-
+textarea{
+    width: 200px;
+    border-radius: 10px;
+}
+textarea:hover{
+    border: 5px solid red;
+    background: lightblue;
+    transition: 0.2s;
+}
+button{
+    width: 100px;
+    border-radius: 10px;
+}
+button:hover{
+    border: 5px solid red;
+    background: lightblue;
+    transition: 0.2s;
+}
+   
     
 
  

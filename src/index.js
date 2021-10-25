@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals'
-import store from './Components/reduc/state';
+import store from './Components/reduc/redux-store';
 import {BrowserRouter} from 'react-router-dom';
 
 
@@ -16,7 +16,8 @@ let rerenderEntireTree = (state) =>{
   );
 }
 rerenderEntireTree(store.getState())
-store.subscribe(rerenderEntireTree)//import из state
+let state = store.getState()
+store.subscribe( () =>{rerenderEntireTree(state)} )//import из state
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
