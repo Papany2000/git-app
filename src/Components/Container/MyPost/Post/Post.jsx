@@ -3,7 +3,7 @@ import style from './Post.module.css'
 const Post = (props) => {
 
     return <div>
-            <div class = {style.post}>
+            <div className = {style.post}>
             <p className = "person">
                 <img className = {style.person} src = {props.src} alt = {props.alt}/>
             </p>

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './Sidebar.module.css'
 const Sidebar = (props) =>{
-return <sidebar className = {style.sidebar}>
+return <div className = {style.sidebar}>
     
    <div className = {style.item}>
    <NavLink to = '/Container' activeClassName = {style.activeLink}>Профиль</NavLink> 
@@ -20,6 +20,6 @@ return <sidebar className = {style.sidebar}>
    <NavLink to = '/Settings' activeClassName = {style.activeLink}>Настройка</NavLink>
    </div>
 
-</sidebar>
+</div>
 }
 export default Sidebar
