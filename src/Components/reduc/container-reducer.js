@@ -12,21 +12,26 @@ let initialState = {
 
  const containerReducer = (state = initialState, action) => {
     switch(action.type){
-        case ADD_POST:
-            let newPost = {
+        case ADD_POST:{
+            let newText = {
                 id: 3,
                 messeg: state.newPostText ,
                 name: 'Sergey Y.',
                 src: "https://images.pexels.com/photos/7155295/pexels-photo-7155295.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 alt: 'foto'
             }
-            state.postData.push(newPost);
-            state.newPostText = '';
-            console.log(state.newPostText)
-            return state;
-         case  UPDATE_NEW_POST_TEXT: 
-         state.newPostText = action.newText;
-         return state;
+            let stateCopy = {...state};
+            stateCopy.postData = [...state.postData];
+            stateCopy.postData.push(newText)
+            stateCopy.newText = '';
+            return stateCopy;
+        }
+         case  UPDATE_NEW_POST_TEXT:{
+            let stateCopy = {...state};
+         stateCopy.newPostText = action.newText;
+         
+         return stateCopy;
+    }
          default:
              return state
     }
