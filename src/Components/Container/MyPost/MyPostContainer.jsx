@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 let mapStateToProps = (state) =>{
     return {
         postData: state.container.postData,
-        newPostText: state.container.newText
+        newPostText: state.container.newPostText
     }
 }
 let mapDispatchToProps = (dispatch) =>{

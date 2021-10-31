@@ -5,33 +5,35 @@ let initialState = {
         postData:[{ id: 1, messeg: 'Мне нравится ваш пост', name: 'Sergey Y.', src: 'https://images.pexels.com/photos/7155295/pexels-photo-7155295.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', alt: 'foto' },
         { id: 2, messeg: 'Мне нравится ваш пост', name: 'Sergey Y.', src: 'https://images.pexels.com/photos/7155295/pexels-photo-7155295.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', alt: 'foto' },],
       
-        newPostText: '',
+        newPostText: 'it-kamasutra.com',
     
 }
     
 
  const containerReducer = (state = initialState, action) => {
     switch(action.type){
-        case ADD_POST:{
+        case ADD_POST:
             let newText = {
                 id: 3,
                 messeg: state.newPostText ,
                 name: 'Sergey Y.',
                 src: "https://images.pexels.com/photos/7155295/pexels-photo-7155295.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 alt: 'foto'
-            }
-            let stateCopy = {...state};
-            stateCopy.postData = [...state.postData];
-            stateCopy.postData.push(newText)
-            stateCopy.newText = '';
-            return stateCopy;
+            };
+            return {...state,
+            postData: [...state.postData, newText],
+            newPostText: ''
         }
-         case  UPDATE_NEW_POST_TEXT:{
-            let stateCopy = {...state};
-         stateCopy.newPostText = action.newText;
+            
+        
+         case  UPDATE_NEW_POST_TEXT:
+            return {
+                ...state,
+         newPostText: action.newText
+        }
          
-         return stateCopy;
-    }
+        
+    
          default:
              return state
     }
