@@ -1,0 +1,27 @@
+.users{
+    display: flex;
+    justify-content: space-between;
+    background: lightyellow;
+}
+
+.img_1{
+    width: 150px;
+    border-radius: 50%;
+
+}
+.users_information{
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+    background: lightgreen; 
+    border-radius: 20px; 
+}
+.users_name{
+    display: flex;
+    flex-direction: column;
+}
+.users_locatin{
+    display: flex;
+    flex-direction: column;
+}
+ 

@@ -17,6 +17,10 @@ return <div className = {style.sidebar}>
    <NavLink to = '/Music' activeClassName = {style.activeLink}>Музыка</NavLink>
    </div>
    <div className = {style.item}>
+   <NavLink to = '/Users' activeClassName = {style.activeLink}>Пользователи</NavLink>
+   </div>
+   
+   <div className = {style.item}>
    <NavLink to = '/Settings' activeClassName = {style.activeLink}>Настройка</NavLink>
    </div>
 

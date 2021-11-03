@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
- 
 import Footer from './Components/Footer/Footer';
 import Heder from './Components/Heder/Heder'
 import Sidebar from './Components/Sidebar/Sidebar';
@@ -10,7 +9,7 @@ import Music from './Components/Music/Music';
 import News from './Components/News/News';
 import Settings from './Components/Settings/Settings';
 import DialogsContainer from './Components/Dialogs/DialogsContainer';
-
+import UsersContainer from './Components/Users/UsersContainer';
 const App = (props) => {
 
   return (
@@ -21,6 +20,7 @@ const App = (props) => {
        <Route path = '/Dialogs' render = {() => <DialogsContainer /> } />
        <Route path = '/Container' render = { () => <MyPostContainer />} />
        <Route path = '/News' render = { () => <News />}/>
+       <Route path = '/users' render = { () => <UsersContainer /> }/>
        <Route path = '/Settings' render = { () => <Settings />}/>
        <Route path = '/Music' render = { () => <Music />}/>
      </div>

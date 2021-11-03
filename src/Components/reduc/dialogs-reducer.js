@@ -14,7 +14,7 @@ let initialState = {
           { id: 2, text: " Давно не виделись." },
           { id: 3, text: "Я очень хочу с вами поговорить" }
       ],
-      newMessagBody: '',
+      newMessagBody: 'Привет',
   
 }
 
