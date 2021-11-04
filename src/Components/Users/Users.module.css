@@ -1,16 +1,22 @@
+.user{
+   
+    background: lightyellow;
+}
 .users{
     display: flex;
     justify-content: space-between;
     background: lightyellow;
+    margin-top: 10px;
 }
 
 .img_1{
-    width: 150px;
+    width: 100px;
+    height: 80px;
     border-radius: 50%;
 
 }
 .users_information{
-    width: 800px;
+    width: 900px;
     display: flex;
     justify-content: space-evenly;
     background: lightgreen; 
