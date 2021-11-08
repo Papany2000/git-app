@@ -15,7 +15,7 @@ class Users extends React.Component {
     render() {
     
         return <div className={style.user}>
-            <button onClick ={this.getUsers}>Get users</button>
+            <button onCgitlick ={this.getUsers}>Get users</button>
             {
                 this.props.users.map((u) => <div key={u.id}>
 
