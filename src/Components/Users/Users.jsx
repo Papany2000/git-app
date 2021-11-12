@@ -4,18 +4,16 @@ import * as axios from 'axios'
 import userPhoto from '../../assets/images/image.png'
 
 class Users extends React.Component {
-    getUsers = () =>
-     {
-        if (this.props.users.length === 0) {
-            axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-                this.props.setUsers(response.data.items)
-            })
-        }
-    }
-    render() {
+  
+    componentDidMount(){
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            this.props.setUsers(response.data.items)  
+    })//компонент смонтирован - метод жизненного цикла.
+}
+    render() { 
     
         return <div className={style.user}>
-            <button onCgitlick ={this.getUsers}>Get users</button>
+            <button onClick ={this.getUsers}>Get users</button>
             {
                 this.props.users.map((u) => <div key={u.id}>
 
