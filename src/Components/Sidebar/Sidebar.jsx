@@ -11,13 +11,13 @@ return <div className = {style.sidebar}>
    <NavLink to = '/Dialogs' activeClassName = {style.activeLink}>Сообщения</NavLink>
    </div>
    <div className = {style.item}>
-   <NavLink to = '/News' activeClassName = {style.activeLink}>Новости</NavLink>
+   <NavLink to = '/News' activeClassName = {style.activeLink}>Пользователи</NavLink>
    </div>
    <div className = {style.item}>
    <NavLink to = '/Music' activeClassName = {style.activeLink}>Музыка</NavLink>
    </div>
    <div className = {style.item}>
-   <NavLink to = '/Users' activeClassName = {style.activeLink}>Пользователи</NavLink>
+   <NavLink to = '/Users' activeClassName = {style.activeLink}>Новости</NavLink>
    </div>
    
    <div className = {style.item}>

@@ -33,4 +33,10 @@
 .selectedPage{
     font-weight: bold;
 }
+.span{
+    width: 1030px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
  
