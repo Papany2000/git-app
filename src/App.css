@@ -5,7 +5,7 @@
   "sidebar container"
   "footer footer";
   grid-template-rows: 60px 1fr 60px;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 200px 1fr;
   grid-gap: 10px;
 }
 .app-wrapper-container{

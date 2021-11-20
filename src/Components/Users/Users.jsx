@@ -17,19 +17,36 @@ class Users extends React.Component {
              
          })
     }
+    pageIndexPlus = () => {
+        if (this.props.pageIndex * this.props.pageSize < this.props.totalUsersCount/this.props.pageSize )
+        {
+            this.props.setPageIndex(this.props.pageIndex + 1)
+        }
+        
+    }
+    pageIndexMinus = () => {
+        if(this.props.pageIndex > 1){
+            this.props.setPageIndex(this.props.pageIndex - 1)
+        }
+        
+    }
     render() { 
     let pagesCount = Math.ceil(this.props.totalUsersCount/this.props.pageSize);
+    let s = '<<'
+    let v = '>>'
+   
     let pages =[]
     for(let i = 1; i <= pagesCount; i++){
         pages.push(i)
     }
         return <div className={style.user}>
             <div className = {style.span}> 
-               {pages.map( p => {
+            <button onClick = {(e) =>this.pageIndexMinus()}>{s}</button>
+               {pages.slice((this.props.pageIndex -1) * this.props.pageSize, this.props.pageIndex * this.props.pageSize).map( p => {
 return <span onClick = {(e) => this.onPageChanged(p)} className = {this.props.currentPage === p && style.selectedPage}>{p}</span>
 
                })}
-               
+               <button onClick = {(e) =>this.pageIndexPlus()}>{v}</button>
             </div>
           
             {

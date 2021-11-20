@@ -3,13 +3,15 @@ const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET-USERS'
+const SET_PAGE_INDEX = 'SET_PAGE_INDEX'
 
 let initialState = {
 
     users: [],
-    pageSize: 10,
+    pageSize: 5,
     totalUsersCount: 0,
-    currentPage: 1
+    currentPage: 1,
+    pageIndex: 1,
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -42,8 +44,11 @@ const usersReducer = (state = initialState, action) => {
             return {...state, currentPage: action.currentPage}
         }
         case SET_USERS_TOTAL_COUNT:{
-            console.log(action.count)
+
             return {...state, totalUsersCount: action.count}
+        }
+        case SET_PAGE_INDEX:{
+            return {...state,pageIndex: action.pageIndex}
         }
         default:
             return state;
@@ -51,7 +56,7 @@ const usersReducer = (state = initialState, action) => {
     }
 
 }
-
+export const setPageIndexAC = (pageIndex) => ({type: SET_PAGE_INDEX, pageIndex})
 export const followAC = (userId) => ({ type: FOLLOW, userId })
 export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId })
 export const setUsersAC = (users) => ({ type: SET_USERS, users })

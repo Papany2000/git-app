@@ -38,5 +38,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+span{
+    border: 1px solid black;
+    margin-left: 5px;
+}
 
  
