@@ -1,37 +1,10 @@
 import React from 'react'
 import style from './Users.module.css'
-import * as axios from 'axios'
 import userPhoto from '../../assets/images/image.png'
 
-class Users extends React.Component {
-    componentDidMount(){
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
-            this.props.setUsers(response.data.items)
-            this.props.setTotalUsersCount(response.data.totalCount)   
-    })//компонент смонтирован - метод жизненного цикла. За ЖЦ вызывается один раз.
-}
-    onPageChanged = (pageNumber) => {
-        this.props.setCurrentPage(pageNumber)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`).then(response => {
-            this.props.setUsers(response.data.items) 
-             
-         })
-    }
-    pageIndexPlus = () => {
-        if (this.props.pageIndex * this.props.pageSize < this.props.totalUsersCount/this.props.pageSize )
-        {
-            this.props.setPageIndex(this.props.pageIndex + 1)
-        }
-        
-    }
-    pageIndexMinus = () => {
-        if(this.props.pageIndex > 1){
-            this.props.setPageIndex(this.props.pageIndex - 1)
-        }
-        
-    }
-    render() { 
-    let pagesCount = Math.ceil(this.props.totalUsersCount/this.props.pageSize);
+let Users = (props) => {
+    
+    let pagesCount = Math.ceil(props.totalUsersCount/props.pageSize);
     let s = '<<'
     let v = '>>'
    
@@ -41,24 +14,24 @@ class Users extends React.Component {
     }
         return <div className={style.user}>
             <div className = {style.span}> 
-            <button onClick = {(e) =>this.pageIndexMinus()}>{s}</button>
-               {pages.slice((this.props.pageIndex -1) * this.props.pageSize, this.props.pageIndex * this.props.pageSize).map( p => {
-return <span onClick = {(e) => this.onPageChanged(p)} className = {this.props.currentPage === p && style.selectedPage}>{p}</span>
+            <button onClick = {(e) =>props.pageIndexMinus()}>{s}</button>
+               {pages.slice((props.pageIndex -1) * props.pageSize, props.pageIndex * props.pageSize).map( p => {
+return <span onClick = {(e) => props.onPageChanged(p)} className = {props.currentPage === p && style.selectedPage}>{p}</span>
 
                })}
-               <button onClick = {(e) =>this.pageIndexPlus()}>{v}</button>
+               <button onClick = {(e) =>props.pageIndexPlus()}>{v}</button>
             </div>
           
             {
-                this.props.users.map((u) => <div key={u.id}>
+                props.users.map((u) => <div key={u.id}>
 
                     <div className={style.users}>
                         <div className={style.users_foto}>
                             <p><img className={style.img_1} src={u.photos.small = null ? u.photos.small : userPhoto} alt='foto' /></p>
                             <p>
                                 {u.followed
-                                    ? <button onClick={() => { this.props.unfollow(u.id) }}>unFollow</button>
-                                    : <button onClick={() => { this.props.follow(u.id) }}>Follow</button>
+                                    ? <button onClick={() => { props.unfollow(u.id) }}>unFollow</button>
+                                    : <button onClick={() => { props.follow(u.id) }}>Follow</button>
                                 }
                             </p>
                         </div>
@@ -78,6 +51,6 @@ return <span onClick = {(e) => this.onPageChanged(p)} className = {this.props.cu
 
         </div>
     }
-}
+
 
 export default Users
