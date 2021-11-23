@@ -15,19 +15,21 @@ let Users = (props) => {
         return <div className={style.user}>
             <div className = {style.span}> 
             <button onClick = {(e) =>props.pageIndexMinus()}>{s}</button>
-               {pages.slice((props.pageIndex -1) * props.pageSize, props.pageIndex * props.pageSize).map( p => {
-return <span onClick = {(e) => props.onPageChanged(p)} className = {props.currentPage === p && style.selectedPage}>{p}</span>
+               {pages.slice((props.pageIndex -1) * props.pageSize, props.pageIndex * props.pageSize).map( (p, index) => {
+return <span key={index} onClick = {(e) => props.onPageChanged(p)} className = {props.currentPage === p ? style.selectedPage : undefined}>{p}</span>
 
                })}
                <button onClick = {(e) =>props.pageIndexPlus()}>{v}</button>
             </div>
           
             {
-                props.users.map((u) => <div key={u.id}>
+                props.users.map((u, index) => <div key={u.id}>
 
                     <div className={style.users}>
                         <div className={style.users_foto}>
-                            <p><img className={style.img_1} src={u.photos.small = null ? u.photos.small : userPhoto} alt='foto' /></p>
+                            <p>
+                                <img  className={style.img_1} src={u.photos.small = null ? u.photos.small : userPhoto} alt='foto' />
+                            </p>
                             <p>
                                 {u.followed
                                     ? <button onClick={() => { props.unfollow(u.id) }}>unFollow</button>
