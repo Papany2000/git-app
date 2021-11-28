@@ -1,6 +1,8 @@
 import React from 'react'
 import style from './Users.module.css'
 import userPhoto from '../../assets/images/image.png'
+import {NavLink} from 'react-router-dom'
+
 
 let Users = (props) => {
     
@@ -28,7 +30,9 @@ return <span key={index} onClick = {(e) => props.onPageChanged(p)} className = {
                     <div className={style.users}>
                         <div className={style.users_foto}>
                             <p>
+                                <NavLink to = {'/container/' + u.id}>
                                 <img  className={style.img_1} src={u.photos.small = null ? u.photos.small : userPhoto} alt='foto' />
+                                </NavLink>
                             </p>
                             <p>
                                 {u.followed

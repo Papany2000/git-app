@@ -3,7 +3,7 @@ import './App.css';
 import Footer from './Components/Footer/Footer';
 import Heder from './Components/Heder/Heder'
 import Sidebar from './Components/Sidebar/Sidebar';
-import MyPostContainer from './Components/Container/Container';
+import ProfileContainer from './Components/Container/ProfileContainer';
 import {Route}  from 'react-router-dom'
 import Music from './Components/Music/Music';
 import News from './Components/News/News';
@@ -18,7 +18,7 @@ const App = (props) => {
      <Sidebar />
      <div className = "app-wrapper-container">
        <Route path = '/Dialogs' render = {() => <DialogsContainer /> } />
-       <Route path = '/Container' render = { () => <MyPostContainer />} />
+       <Route path = '/Container' render = { () => <ProfileContainer />} />
        <Route path = '/News' render = { () =>  <News />}/>
        <Route path = '/users' render = { () => <UsersContainer />}/>
        <Route path = '/Settings' render = { () => <Settings />}/>
