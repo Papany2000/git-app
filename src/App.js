@@ -17,12 +17,23 @@ const App = (props) => {
      <Heder />
      <Sidebar />
      <div className = "app-wrapper-container">
-       <Route path = '/Dialogs' render = {() => <DialogsContainer /> } />
-       <Route path = '/Container' render = { () => <ProfileContainer />} />
-       <Route path = '/News' render = { () =>  <News />}/>
-       <Route path = '/users' render = { () => <UsersContainer />}/>
-       <Route path = '/Settings' render = { () => <Settings />}/>
-       <Route path = '/Music' render = { () => <Music />}/>
+       <Route path = '/Dialogs'
+                   render = {() => <DialogsContainer /> } />
+
+       <Route path = '/Container/:userId?' 
+                   render = { () => <ProfileContainer />} />
+
+       <Route path = '/News'
+        render = { () =>  <News />}/>
+
+       <Route path = '/users'
+        render = { () => <UsersContainer />}/>
+
+       <Route path = '/Settings'
+        render = { () => <Settings />}/>
+
+       <Route path = '/Music'
+        render = { () => <Music />}/>
      </div>
      <Footer />
     </div>
