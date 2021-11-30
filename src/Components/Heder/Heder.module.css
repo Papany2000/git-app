@@ -2,4 +2,9 @@
     grid-area: header;
     background: #fff000;
     }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        background: blanchedalmond;
+          }
     
